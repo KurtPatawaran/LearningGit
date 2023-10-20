@@ -1,0 +1,44 @@
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1 v-text="sitename"></h1>
+        </header>
+
+        <main>
+            <div  style="float: left">
+                <figure>
+                    <img v-bind:src="product.image">
+                </figure>
+            </div>
+            
+            
+                <h2 v-text="product.title"></h2>
+                <p v-html="product.location"></p>
+                <p>Price:{{product.price}}</p>
+            
+        </main>
+    </div>
+    
+
+    <script type="text/javascript">
+        let webstore = new Vue({
+            el:'#app',
+            data:{
+                sitename: 'After School Club',
+                product:{
+                    title:"Math",
+                    location:"London",
+                    price: 1000,
+                    image:"mathIcon.png"
+                
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>
